@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/drawable/border_network.xml" value="0.1795" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/drawable/round.xml" value="0.1545" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_delete.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_home.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_login_admin.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_space.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/activity_splash.xml" value="0.5" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/network.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/layout/progress_dialog.xml" value="0.16802536231884058" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/menu/menu_navigation.xml" value="0.2" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1085" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/mipmap-anydpi-v26/ic_launcher_zone.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/AdminZonePark/app/src/main/res/mipmap-anydpi-v26/ic_launcher_zone_round.xml" value="0.1285" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

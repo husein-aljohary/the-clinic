@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">clinic</string>
+    <string name="required">Required</string>
+    <string name="name">First Name</string>
+
+
+    <string-array name="city">
+        <item>Yerushalayim</item>
+        <item>HaTzafon</item>
+        <item>Hifa</item>
+        <item>HaMerkaz</item>
+        <item>TelAviv</item>
+        <item>HaDarom</item>
+        <item>YehudaVeShomron</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
+

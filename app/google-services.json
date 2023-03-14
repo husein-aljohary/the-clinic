@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "254608880258",
+    "firebase_url": "https://theclinic323-default-rtdb.firebaseio.com",
+    "project_id": "theclinic323",
+    "storage_bucket": "theclinic323.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254608880258:android:828e6aae1d35330c587a9b",
+        "android_client_info": {
+          "package_name": "com.example.clinic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254608880258-r221m79qgmvr5b5rf088itd2thjol79t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRjluerpIQfiTH-LON-AiJtMgtRHPIBSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254608880258-r221m79qgmvr5b5rf088itd2thjol79t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254608880258:android:e9c6cbc6aff8fe84587a9b",
+        "android_client_info": {
+          "package_name": "com.example.theclinic323"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254608880258-r221m79qgmvr5b5rf088itd2thjol79t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRjluerpIQfiTH-LON-AiJtMgtRHPIBSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254608880258-r221m79qgmvr5b5rf088itd2thjol79t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
