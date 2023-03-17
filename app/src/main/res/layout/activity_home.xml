@@ -33,6 +33,7 @@
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!-- not work -->
     <EditText
         android:id="@+id/teparksnumber"
         android:layout_width="300dp"

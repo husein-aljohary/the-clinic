@@ -312,6 +312,8 @@ public class home extends AppCompatActivity implements AdapterView.OnItemSelecte
         saveInFirebase2();
         saveInFirebase();
         reff.child(chosen_spinner).child(teclinicname.getText().toString()).push().setValue(clinicnfo1);
+        //reff.child(chosen_spinner).child(teclinicname.getText().toString()).child("departments").child(depname.getText().toString()).push().setValue(depname.getText().toString());
+
         //CreateSpace();
         Toast.makeText(home.this, "Successful Insert", Toast.LENGTH_SHORT).show();
        Clear();
