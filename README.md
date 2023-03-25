@@ -1,4 +1,4 @@
-# the-clinic
+# the-clinic project prototype
 user :
 ![waite page](https://user-images.githubusercontent.com/114994337/227740754-b8e918ed-528b-408a-b521-fcada39024f3.png)
 ![chose city](https://user-images.githubusercontent.com/114994337/227740737-f26cbfcb-0eff-4c99-89fb-305b08679ceb.png)
