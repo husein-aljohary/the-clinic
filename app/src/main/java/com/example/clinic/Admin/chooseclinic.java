@@ -74,7 +74,7 @@ public class chooseclinic extends AppCompatActivity {
         myAdapter = new MyAdapter2(this,list ,new MyAdapter2.Itemclicklistener() {
             @Override
             public void onitemclick(Clinic details) {
-                //send(details.getName(),cityname);
+                send(cityname,details.getName());
             }
         });
 
@@ -101,15 +101,16 @@ public class chooseclinic extends AppCompatActivity {
 
     }
 
-/*
-    public void sendcity(String message){
+
+    public void send(String message,String message2){
         //Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(choosecity.this, chooseclinic.class);
-        intent.putExtra("the city is ",message);
+        Intent intent=new Intent(chooseclinic.this, choosedepartment.class);
+        intent.putExtra("city",message);
+        intent.putExtra("clinic",message2);
         startActivity(intent);
 
     }
-    */
+
 
     public void onBackPressed(){
         progressDialog.dismiss();

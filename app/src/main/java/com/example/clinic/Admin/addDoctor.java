@@ -51,21 +51,15 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
     Spinner spinner2, spinner3 ;
     String chosen_spinner,chosen_spinner3;
 
+////////////////////////////////
+    /*Spinner spinnerV;
+    DatabaseReference spiReference;
+    ArrayList<String> spinnerList;
+    ArrayAdapter<String> adapter8;
+    String chosen_department;*/
+//////////////////////////////////
 
 
-
-
-
-    /*
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        chosen_spinner=adapterView.getItemAtPosition(i).toString();
-        fetchdata();
-    }
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }*/
     ValueEventListener listener;
     ArrayList<String> list;
     ArrayAdapter<String> adapter1;
@@ -80,18 +74,6 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
     FirebaseStorage storage1;
     StorageReference storageReferencedep;
 
-
-
-/*
-
-
-    DatabaseReference dbref;
-    Spinner spinner3;
-    String chosen_spinner3;
-    ValueEventListener listener;
-    ArrayList<String> list;
-    ArrayAdapter<String> adapter1;
-*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +128,7 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
 
 
 
+
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -196,6 +179,13 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
 
             }
         });
+
+
+
+
+
+
+
 
         depname = (EditText) findViewById(R.id.docname);
         starttime=(EditText) findViewById(R.id.starttime);
@@ -254,28 +244,22 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
 
 
 
-        fetchdataall();
 
 
-        ////////////
-        /*
-        reff = FirebaseDatabase.getInstance().getReference();
-        storage1=FirebaseStorage.getInstance();
-        storageReferencedep=storage1.getReference();//.child("Doctors/");
-        imageView.setTag("png1");
-        starttime=(EditText) findViewById(R.id.starttime);
-        endtime=(EditText) findViewById(R.id.endtime);
 
-        dbref=FirebaseDatabase.getInstance().getReference().child("Departmens");
-        spinner3=findViewById(R.id.spinner);
-        list=new ArrayList<>();
-        adapter1=new ArrayAdapter<>(addDoctor.this,android.R.layout.simple_spinner_item,list);
-        spinner3.setAdapter(adapter1);
 
-        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //////////////////////////////////////////////////////////////////
+/*
+        spinnerV=findViewById(R.id.spinner8);
+        spiReference=FirebaseDatabase.getInstance().getReference("clinicnfo");
+        spinnerList=new ArrayList<>();
+        adapter8=new ArrayAdapter<String>(addDoctor.this,android.R.layout.simple_spinner_item,spinnerList);
+        spinnerV.setAdapter(adapter8);
+        showdata();
+        spinnerV.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                chosen_spinner3=adapterView.getItemAtPosition(i).toString();
+                chosen_department=adapterView.getItemAtPosition(i).toString();
             }
 
             @Override
@@ -283,59 +267,37 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
 
             }
         });
+/////////////////////////////////////////////////////////////////
 
-
-
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                requestImage();
-            }
-        });
-
-
-
-        btnsave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String dep=depname.getText().toString().trim();
-
-                if (dep.isEmpty()) {
-                    depname.setError("Doctor is Empty");
-                    depname.requestFocus();
-                    return;
-                }
-
-                if (imageView.getTag()==("png1") ){
-                    //Toast.makeText(cities.this, "Please choose photos", Toast.LENGTH_SHORT).show();
-                    Alert=new AlertDialog.Builder(addDoctor.this);
-                    Alert.setTitle("Can't add ! ");
-                    Alert.setMessage("Please choose pictures of the Doctor");
-                    Alert.setCancelable(true);
-                    Alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    });
-                    AlertDialog dialog=Alert.create();
-                    dialog.show();
-
-                }
-                else{
-                    Alart();
-                }
-
-
-            }
-        });
-
-
-
-        fetchdataall();
-        */
+        System.out.println("++++++++++"+chosen_spinner);
+        System.out.println("++++++++++"+chosen_spinner3);*/
 
     }
+
+
+    /////////////////////////////////////////////////
+/*
+    public void showdata(){
+        spiReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                spinnerList.clear();
+                for (DataSnapshot item:snapshot.getChildren()){
+                    //spinnerList.add(item.getValue().toString());
+                    spinnerList.add(String.valueOf(String.valueOf(item.getKey())));
+
+                }
+                adapter8.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+*/
+    /////////////////////////////////////////////////
 
 
 
@@ -358,6 +320,13 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
         });
     }
 
+
+
+
+
+
+
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -369,24 +338,7 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
     }
 
 
-    public void fetchdataall(){
-        listener=dbref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-                for(DataSnapshot mydata:snapshot.getChildren() ){
-                    list.add(String.valueOf(String.valueOf(mydata.getKey())));
-                }
 
-                adapter1.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
     private void requestImage() {
         Intent intent=new Intent();
@@ -463,6 +415,9 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
         Doctor d=new Doctor(depname.getText().toString(),chosen_spinner3,starttime.getText().toString(),endtime.getText().toString());
         //reff.child("Doctors").child(chosen_spinner3).child(depname.getText().toString()).setValue(d);
         reff.child(chosen_spinner).child(chosen_spinner3).child("Doctors").child(depname.getText().toString()).setValue(d);
+        //reff.child("HaTzafon").child("Afulacenter").child("Doctors").child(depname.getText().toString()).setValue(d);
+        //reff.child(chosen_spinner).child(chosen_spinner3).child("departments").child(chosen_spinner3).child(depname.getText().toString()).setValue(d);
+
         //reff.push().child("department").setValue(chosen_spinner3);
         Toast.makeText(addDoctor.this, "Successful Insert", Toast.LENGTH_SHORT).show();
         Clear();
@@ -484,125 +439,6 @@ public class addDoctor extends AppCompatActivity implements AdapterView.OnItemSe
             }
         }
     }
-
-
-
-    /*
-    public void fetchdataall(){
-        listener=dbref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                list.clear();
-                for(DataSnapshot mydata:snapshot.getChildren() ){
-                    list.add(String.valueOf(String.valueOf(mydata.getKey())));
-                }
-
-                adapter1.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    private void requestImage() {
-        Intent intent=new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select picture"),img_request_id);
-    }
-
-    private void  Clear(){
-        depname.getText().clear();
-        imageView.setTag("png1");
-        imageView.setImageResource(android.R.drawable.ic_menu_crop);
-    }
-
-
-    private void saveInFirebase() {
-        if(imgUri != null){
-            final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Please waite...");
-            progressDialog.show();
-            StorageReference reference = storageReferencedep.child("Doctors/").child(chosen_spinner3).child(depname.getText().toString());
-
-            reference.putFile(imgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    progressDialog.dismiss();
-                    Toast.makeText(addDoctor.this, "Saved successful", Toast.LENGTH_SHORT).show();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(addDoctor.this, "ERROR... "+e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                    double progress=(100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-                    progressDialog.setMessage("saved" + (int) progress + "%");
-
-                }
-            });
-        }
-    }
-
-    private void Alart(){
-
-        Alert=new AlertDialog.Builder(addDoctor.this);
-        Alert.setTitle("Welcome Admin ");
-        Alert.setMessage("Are you sure to add "+depname.getText().toString());
-        Alert.setCancelable(true);
-
-        Alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                upload();
-
-
-
-            }
-        });
-        Alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-        AlertDialog dialog=Alert.create();
-        dialog.show();
-    }
-
-    private  void upload(){
-
-        saveInFirebase();
-        Doctor d=new Doctor(depname.getText().toString(),chosen_spinner3,starttime.getText().toString(),endtime.getText().toString());
-        reff.child("Departmens").child(chosen_spinner3).child(depname.getText().toString()).setValue(d);
-        //reff.push().child("department").setValue(chosen_spinner3);
-        Toast.makeText(addDoctor.this, "Successful Insert", Toast.LENGTH_SHORT).show();
-        Clear();
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == img_request_id && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            imgUri = data.getData();
-            try {
-                Bitmap bitmapimg = MediaStore.Images.Media.getBitmap(getContentResolver(), imgUri);
-                imageView.setImageBitmap(bitmapimg);
-                imageView.setTag("done1");
-                // insertcityphoto.setEnabled(false);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    */
 
 
 

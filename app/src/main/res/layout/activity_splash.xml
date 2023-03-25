@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/header_icon"
-        android:layout_width="192dp"
-        android:layout_height="164dp"
+        android:layout_width="249dp"
+        android:layout_height="223dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"

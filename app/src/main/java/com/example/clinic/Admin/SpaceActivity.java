@@ -138,6 +138,8 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
         adapter4=new ArrayAdapter<>(SpaceActivity.this,android.R.layout.simple_spinner_item,numlist);
         spinner4.setAdapter(adapter4);
 
+
+
         //showing the clinics in the city that we choose it
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -185,6 +187,7 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
 
+
         //edite the parks availability
         Editspace.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,7 +200,7 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
                 Alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        reff.child(chosen_spinner).child(chosen_spinner3).child("departments").child(depname.getText().toString()).push().setValue(depname.getText().toString());
+                        reff.child(chosen_spinner).child(chosen_spinner3).child("Doctors").child(chosen_spinner4).child("apoitments").child(depname.getText().toString()).push().setValue(depname.getText().toString());
                     }
                 });
                 Alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -244,7 +247,11 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
 
 
 
+
+
     }
+
+
 
     //display the data from database
     public void fetchdata(){
@@ -270,7 +277,7 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 numlist.clear();
-                for(DataSnapshot mydata:snapshot.child(chosen_spinner).child(chosen_spinner3).child("departments").getChildren() ){
+                for(DataSnapshot mydata:snapshot.child(chosen_spinner).child(chosen_spinner3).child("Doctors").getChildren() ){
                     numlist.add(String.valueOf(String.valueOf(mydata.getKey())));
                 }
                 adapter4.notifyDataSetChanged();
@@ -281,6 +288,8 @@ public class SpaceActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
     }
+
+
 
 
 

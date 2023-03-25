@@ -12,6 +12,13 @@
         android:theme="@style/Theme.AdminZonePark"
         tools:targetApi="31">
         <activity
+            android:name=".Admin.choosedepartment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Admin.chooseclinic"
             android:exported="false">
             <meta-data
@@ -36,13 +43,13 @@
             android:name=".Admin.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".Admin.choosecity"
+            android:name=".Admin.home"
             android:exported="false" />
         <activity
             android:name=".Admin.Delete"
             android:exported="false" />
         <activity
-            android:name=".Admin.home"
+            android:name=".Admin.choosecity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
